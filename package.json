@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An example typescript monorepo",
   "scripts": {
+    "prepare": "husky install",
     "prepublish": "pnpm build",
     "verify": "pnpm -r --filter=./packages run verify",
     "prettier": "pnpm -r --filter=./packages run prettier",
@@ -12,13 +13,9 @@
   "author": "@CryogenicPlanet",
   "license": "ISC",
   "private": true,
-  "husky": {
-    "hooks": {
-      "pre-commit": "pnpm prettier",
-      "pre-push": "pnpm verify"
-    }
-  },
   "devDependencies": {
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.6",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
